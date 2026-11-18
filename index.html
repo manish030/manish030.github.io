@@ -1,319 +1,399 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Manish Kumar Jha | Embedded Systems Engineer</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manish Kumar Jha | Senior Embedded Firmware Engineer</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --surface: #1e293b;
+      --surface-hover: #273549;
+      --primary: #38bdf8;
+      --primary-dark: #0284c7;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --border: #334155;
+    }
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15, 23, 42, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-container {
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    /* Layout */
+    main {
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      padding: 4.5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    h2 {
+      font-size: 1.85rem;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      margin-bottom: 2.25rem;
+      font-size: 1rem;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 5.5rem 0 4.5rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--primary);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero p {
+      font-size: 1.08rem;
+      color: var(--muted);
+      max-width: 780px;
+      margin-bottom: 1rem;
+    }
+
+    .hero strong {
+      color: var(--text);
+    }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1.75rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.35rem;
+      border-radius: 6px;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #0f172a;
+    }
+
+    .btn-primary:hover {
+      background: #7dd3fc;
+    }
+
+    .btn-outline {
+      border: 1px solid var(--border);
+      color: var(--text);
+      background: var(--surface);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    /* Cards Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.5rem;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: var(--primary);
+    }
+
+    .card h3 {
+      color: var(--primary);
+      font-size: 1.15rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.75rem;
+    }
+
+    .tag {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.22rem 0.6rem;
+      border-radius: 5px;
+      font-size: 0.8rem;
+    }
+
+    /* Timeline / Experience & Education */
+    .timeline-item {
+      background: var(--surface);
+      border-left: 3px solid var(--primary);
+      border-radius: 0 8px 8px 0;
+      padding: 1.4rem 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-header h3 {
+      font-size: 1.15rem;
+      color: var(--text);
+    }
+
+    .timeline-date {
+      color: var(--primary);
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+
+    .timeline-item ul {
+      margin-left: 1.2rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .timeline-item li {
+      margin-bottom: 0.35rem;
+    }
+
+    /* Contact */
+    .contact-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .contact-details p {
+      margin-bottom: 0.45rem;
+      color: var(--muted);
+    }
+
+    .contact-details strong {
+      color: var(--text);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 640px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
 </head>
+<body>
 
-<body class="is-preload">
-
-    <!-- Nav -->
-    <nav id="nav">
-        <ul class="container">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#work">Skills</a></li>
-            <li><a href="#portfolio">Projects</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#contact">Contact</a></li>
+  <!-- Header Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="#home" class="logo">Manish Kumar Jha</a>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
-    </nav>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Home -->
-    <article id="home" class="wrapper style1">
-        <div class="container">
-            <div class="row">
-                <div class="col-4 col-5-large col-12-medium">
-                    <span class="image fit">
-                        <img src="images/pic00.jpg" alt="Manish Kumar Jha" />
-                    </span>
-                </div>
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <span class="badge">Senior Embedded Firmware Engineer</span>
+      <h1>Hi, I'm <span>Manish Kumar Jha</span></h1>
+      <p>
+        Embedded Firmware Engineer with an <strong>M.Tech in Embedded Systems</strong>, specializing in Bare-Metal and RTOS firmware development on <strong>ARM Cortex-M (STM32, Atmel SAM4S)</strong> microcontrollers.
+      </p>
+      <p>
+        Currently at <strong>Aimil Ltd., New Delhi</strong>, architecting low-level peripheral drivers (<strong>SPI, I2C, UART, RS485, 24-bit ADC</strong>) and leading hardware-firmware bring-up using <strong>Keil uVision</strong> and <strong>STM32CubeIDE</strong>.
+      </p>
+      <div class="btn-group">
+        <a href="Manish_Kumar_Jha_Resume.pdf" target="_blank" class="btn btn-primary">Download Resume (PDF)</a>
+        <a href="#projects" class="btn btn-outline">View Engineering Projects</a>
+        <a href="https://github.com" target="_blank" class="btn btn-outline">GitHub</a>
+        <a href="#contact" class="btn btn-outline">Contact Me</a>
+      </div>
+    </section>
 
-                <div class="col-8 col-7-large col-12-medium">
-                    <header>
-                        <h1>Hi, I'm <strong>Manish Kumar Jha</strong></h1>
-                    </header>
-
-                    <p>
-                        Senior Design Engineer specializing in
-                        Embedded Systems, STM32 Firmware Development,
-                        Industrial Automation, IoT and Robotics.
-                    </p>
-
-                    <p>
-                        Currently working at <strong>Aimil Ltd., New Delhi</strong>
-                        on industrial embedded products involving
-                        firmware, hardware design, testing and troubleshooting.
-                    </p>
-
-                    <p>
-                        Experienced in Bare-Metal Embedded C,
-                        UART, SPI, I2C, RS485, ADC, PWM,
-                        Linux Porting, U-Boot and IoT systems.
-                    </p>
-
-                    <p>
-                        <a href="https://linkedin.com/in/manishjha030"
-                            target="_blank">
-                            <i class="fab fa-linkedin"></i> LinkedIn
-                        </a>
-                        &nbsp; | &nbsp;
-
-                        <a href="https://github.com/"
-                            target="_blank">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
-                    </p>
-
-                    <a href="#work" class="button large scrolly">
-                        Learn More
-                    </a>
-                </div>
-            </div>
+    <!-- Technical Skills Section -->
+    <section id="skills">
+      <h2>Technical Skills</h2>
+      <p class="section-subtitle">Core firmware architectures, communication protocols, and debugging toolchains</p>
+      <div class="grid">
+        <div class="card">
+          <h3>Embedded Firmware &amp; MCUs</h3>
+          <p>Bare-metal programming, peripheral driver development, interrupt handling, DMA, and state-machine architecture.</p>
+          <div class="tags">
+            <span class="tag">Embedded C</span>
+            <span class="tag">STM32 (ARM Cortex-M)</span>
+            <span class="tag">Atmel SAM4S</span>
+            <span class="tag">RTOS</span>
+            <span class="tag">ADC / PWM / Timers</span>
+          </div>
         </div>
-    </article>
 
-    <!-- Skills -->
-    <article id="work" class="wrapper style2">
-        <div class="container">
-            <header>
-                <h2>Technical Skills</h2>
-                <p>Embedded System Design and Development</p>
-            </header>
-
-            <div class="row aln-center">
-
-                <div class="col-4 col-6-medium col-12-small">
-                    <section class="box style1">
-                        <span class="icon solid featured fa-microchip"></span>
-                        <h3>Embedded Firmware</h3>
-                        <p>
-                            STM32, Embedded C, Bare-Metal Programming,
-                            ADC, PWM, UART, SPI, I2C, RS232 and RS485.
-                        </p>
-                    </section>
-                </div>
-
-                <div class="col-4 col-6-medium col-12-small">
-                    <section class="box style1">
-                        <span class="icon solid featured fa-gears"></span>
-                        <h3>Hardware Design</h3>
-                        <p>
-                            Analog circuit design, amplifiers,
-                            AC-DC converter circuits,
-                            sensor interfacing and debugging.
-                        </p>
-                    </section>
-                </div>
-
-                <div class="col-4 col-6-medium col-12-small">
-                    <section class="box style1">
-                        <span class="icon solid featured fa-cloud"></span>
-                        <h3>IoT & Linux</h3>
-                        <p>
-                            Linux Porting, U-Boot, Buildroot,
-                            Raspberry Pi, Arduino,
-                            IoT application development.
-                        </p>
-                    </section>
-                </div>
-
-            </div>
-
-            <footer>
-                <p>
-                    Passionate about Automation, Robotics,
-                    Defense Electronics and IoT Solutions.
-                </p>
-
-                <a href="#portfolio" class="button large scrolly">
-                    View My Projects
-                </a>
-            </footer>
+        <div class="card">
+          <h3>Communication Protocols</h3>
+          <p>Low-level bus driver implementation, packet framing, ring buffers, and industrial/RF transceiver interfacing.</p>
+          <div class="tags">
+            <span class="tag">SPI</span>
+            <span class="tag">I2C</span>
+            <span class="tag">UART</span>
+            <span class="tag">RS232</span>
+            <span class="tag">RS485</span>
+            <span class="tag">AT86RF215 RF</span>
+          </div>
         </div>
-    </article>
 
-    <!-- Portfolio -->
-    <article id="portfolio" class="wrapper style3">
-        <div class="container">
-
-            <header>
-                <h2>Projects & Research</h2>
-                <p>Some of my recent embedded and IoT projects</p>
-            </header>
-
-            <div class="row">
-
-                <div class="col-4 col-6-medium col-12-small">
-                    <article class="box style2">
-                        <a href="#" class="image featured">
-                            <img src="images/project1.jpg" alt="" />
-                        </a>
-
-                        <h3>Earthing Data Logger</h3>
-
-                        <p>
-                            STM32 based industrial data logger
-                            with 24-bit ADC, Flash memory,
-                            LCD and RS232 communication.
-                        </p>
-                    </article>
-                </div>
-
-                <div class="col-4 col-6-medium col-12-small">
-                    <article class="box style2">
-                        <a href="#" class="image featured">
-                            <img src="images/project2.jpg" alt="" />
-                        </a>
-
-                        <h3>OFDM IoT Transceiver</h3>
-
-                        <p>
-                            Developed IoT communication firmware
-                            using ATSAM4SD32C and AT86RF215
-                            RF transceiver module.
-                        </p>
-                    </article>
-                </div>
-
-                <div class="col-4 col-6-medium col-12-small">
-                    <article class="box style2">
-                        <a href="#" class="image featured">
-                            <img src="images/project3.jpg" alt="" />
-                        </a>
-
-                        <h3>IoT Aeroponics System</h3>
-
-                        <p>
-                            Smart agriculture system using sensors,
-                            automation and cloud monitoring
-                            for aeroponic farming.
-                        </p>
-                    </article>
-                </div>
-
-            </div>
-
+        <div class="card">
+          <h3>IDEs, Toolchains &amp; Debugging</h3>
+          <p>Board bring-up, signal integrity verification, protocol decoding, and version-controlled firmware workflows.</p>
+          <div class="tags">
+            <span class="tag">Keil uVision</span>
+            <span class="tag">STM32CubeIDE</span>
+            <span class="tag">ST-Link</span>
+            <span class="tag">Oscilloscope</span>
+            <span class="tag">Logic Analyzer</span>
+            <span class="tag">Git</span>
+          </div>
         </div>
-    </article>
 
-    <!-- Experience -->
-    <article id="experience" class="wrapper style2">
-        <div class="container">
-
-            <header>
-                <h2>Work Experience</h2>
-            </header>
-
-            <section class="box style1">
-                <h3>Aimil Ltd. — Senior Design Engineer</h3>
-                <p><strong>June 2023 – Present</strong></p>
-
-                <p>
-                    Development and testing of embedded firmware and
-                    hardware for industrial products,
-                    production troubleshooting,
-                    QC documentation and customer support.
-                </p>
-            </section>
-
-            <section class="box style1">
-                <h3>Pathways School Gurgaon — Robotics Facilitator</h3>
-                <p><strong>July 2019 – May 2023</strong></p>
-
-                <p>
-                    Guided students in robotics, embedded systems,
-                    automation and product development
-                    as part of IB curriculum.
-                </p>
-            </section>
-
-            <section class="box style1">
-                <h3>VDesign Technologies — Embedded Design Engineer</h3>
-                <p><strong>2016 – 2017</strong></p>
-
-                <p>
-                    Worked on IoT network firmware development
-                    using Atmel microcontrollers and RF modules.
-                </p>
-            </section>
-
-        </div>
-    </article>
-
-    <!-- Contact -->
-    <article id="contact" class="wrapper style4">
-        <div class="container medium">
-
-            <header>
-                <h2>Get In Touch</h2>
-
-                <p>
-                    Interested in Embedded Systems, Robotics,
-                    IoT and Industrial Automation.
-                </p>
-            </header>
-
-            <div class="row">
-                <div class="col-12">
-
-                    <p>
-                        <strong>Email:</strong>
-                        manish.jha0305@gmail.com
-                    </p>
-
-                    <p>
-                        <strong>Phone:</strong>
-                        +91 9113937895
-                    </p>
-
-                    <p>
-                        <strong>Location:</strong>
-                        New Delhi, India
-                    </p>
-
-                    <ul class="social">
-
-                        <li>
-                            <a href="https://linkedin.com/in/manishjha030"
-                                class="icon brands fa-linkedin-in">
-                                <span class="label">LinkedIn</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="https://github.com/"
-                                class="icon brands fa-github">
-                                <span class="label">Github</span>
-                            </a>
-                        </li>
-
-                    </ul>
-
-                </div>
-            </div>
-
-            <footer>
-                <ul id="copyright">
-                    <li>&copy; Manish Kumar Jha. All rights reserved.</li>
-                </ul>
-            </footer>
-
-        </div>
-    </article>
-
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-
-</body>
-</html>
+        <div class="card">
+          <h3>Embedded Linux &amp; Hardware</h3>
+          <p>Bootloader customization, board support packages, analog front-end interfacing, and AC-DC power circuits.</p>
+          <div class="tags">
+            <span class="tag">Linux Porting</span>
+            <span class="tag">U-Boot</span>
+            <span class="tag">Buildroot</span>
+            <span class="tag">Raspberry Pi</span>
+            <span class="tag">Analog Circuit Design</span>
+          </div>
