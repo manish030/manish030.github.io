@@ -452,6 +452,24 @@
 			<h3>Evaluation of RADAR Ambiguity Function | DRDO, Bangalore (2013)</h3>
 			<p>Analyzed range and velocity resolution parameters for single and multi-target radar signal processing scenarios.</p>
 		  </div>
+		  <div class="card">
+			  <h3>STM32 Interrupt-Driven UART &amp; Ring Buffer Driver | Open-Source Firmware</h3>
+			  <p>Engineered a lightweight, non-blocking circular buffer and UART serial driver in Embedded C for ARM Cortex-M (STM32) microcontrollers to handle high-speed RS232/RS485 telemetry without stalling the main loop.</p>
+			  <ul>
+				<li>Designed an <strong>ISR-safe single-producer / single-consumer ring buffer</strong> using <code>volatile</code> head/tail indices for zero byte-drop reception at 115200 bps.</li>
+				<li>Implemented <strong>zero dynamic memory allocation</strong> (static caller-allocated buffers) compliant with deterministic embedded firmware standards.</li>
+				<li>Decoupled hardware abstraction files (<code>.h</code> / <code>.c</code>) for portability across STM32F4, STM32G0, and STM32L4 targets in Keil uVision and STM32CubeIDE.</li>
+			  </ul>
+			  <div style="margin-bottom: 12px;">
+				<span class="tech-tag">STM32 (ARM Cortex-M)</span>
+				<span class="tech-tag">Embedded C</span>
+				<span class="tech-tag">Circular Buffer</span>
+				<span class="tech-tag">UART / RS485</span>
+				<span class="tech-tag">ISR / DMA</span>
+				<span class="tech-tag">STM32CubeIDE / Keil</span>
+			  </div>
+			  <a href="https://github.com" target="_blank" class="repo-btn">View Source Code on GitHub &rarr;</a>
+			</div>
 		</section>
 
 		<!-- EXPERIENCE SECTION -->
